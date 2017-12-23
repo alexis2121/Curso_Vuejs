@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    Hola {{nombre}}
+    <!-- declaramos una variable llamado nombre -->
+    <!--
+    <a href="{{url}}">{{link}}</a>
+      vue no nos permite agregar una variable en lllos atributos de un tag para esto usamos
+      una etiqueta de vue, con la cual podemos modificar el atributo de un tag usando vue
+    -->
+    <a v-bind:href="url" target="_blank">{{link}}</a>
+    <!-- de esta forma podemos modificar el atributo href de el tag con vue, aunque existe una forma mas corta de hacerlo -->
+    <a :href="url2" target="_blank">segundo enlace a {{enlace}}</a>
+    <!-- de esta forma usamos un shortcut con el cual escribimos codigo en vue de forma rapida -->
+
+  </div>
+  <script type="text/javascript" src="http://unpkg.com/vue"></script>
+  <!-- inportamos la libreria de Vue.js -->
+    <script type="text/javascript">
+      var app = new Vue({//declaramos una variable llamada app como un nuevo objeto de tipo vue
+        el: '#app',
+        // seleccionamos el div que deseamos manupilar de forma reactiva
+        data:{
+          // en la data añadimos las variables y los valores de las mismas
+          nombre:'Alexis',
+          // le damos el valor a la variable nombre
+          link:'ir a Google',
+          // le damos el valor a la variable link
+          url:'http://www.google.cl',
+          // le damos el valor a la variable url
+          enlace:'Google',
+          // le asignamos el valor a la variable enlace
+          url2:'http://www.google.cl',
+          // le asignamos el valor a la variable url2
+        }
+      })
+    </script>
+
+</body>
+</html>
